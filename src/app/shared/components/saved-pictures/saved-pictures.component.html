@@ -1,0 +1,31 @@
+<div class="main-unit">
+  <h4 class="stat" *ngIf="savedImages.length === 0">
+    Нет сохранённых изображений
+  </h4>
+  <h4 class="stat" *ngIf="savedImages.length !== 0">
+    Сохранённых изображений {{ savedImages.length }}
+  </h4>
+
+  <div class="block-image-cards" #scroll>
+    <!-- ================================ Cards-->
+    <div class="image-cards" *ngFor="let item of savedImages; let idx = index">
+      <h5 class="title">
+        {{ item.title }}
+      </h5>
+      <div class="images">
+        <img
+          src="{{ item.url_c }}"
+          alt=""
+          (click)="showPicture(item.url_c, savedImages)"
+        />
+      </div>
+      <div class="btn-block">
+        <button mat-raised-button (click)="deleteImage(idx)">
+          Удалить
+          <span class="material-symbols-outlined"> delete </span>
+        </button>
+      </div>
+    </div>
+    <!-- ======================= -->
+  </div>
+</div>

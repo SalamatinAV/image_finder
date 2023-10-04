@@ -1,0 +1,33 @@
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik Dirt", cursive;
+}
+h2 {
+  user-select: none;
+}
+
+.main-unit {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  bottom: 5px;
+  left: 85px;
+  overflow: hidden;
+}
+// =========================================================  Scroll
+*::-webkit-scrollbar {
+  width: 8px; /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(56, 54, 54); /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(116, 113, 113); /* цвет бегунка */
+  border-radius: 10px; /* округлось бегунка */
+}
+// =================================================================

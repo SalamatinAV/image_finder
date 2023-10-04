@@ -1,0 +1,75 @@
+<div class="main-unit">
+  <div class="searsh-input">
+    <mat-form-field class="example-form-field" [appearance]="'outline'">
+      <mat-label>Поиск</mat-label>
+      <input [formControl]="searchControl" type="text" matInput type="text" />
+
+      <button
+        *ngIf="searchControl.value !== ''"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchControl.setValue('')"
+      >
+        <span class="material-symbols-outlined cancel"> cancel </span>
+      </button>
+    </mat-form-field>
+
+    <div style="position: relative; height: 4px; margin-top: 2px; width: 80%">
+      <mat-progress-bar
+        *ngIf="loading"
+        style="position: absolute; width: 100%"
+        mode="indeterminate"
+      ></mat-progress-bar>
+    </div>
+  </div>
+  <ng-template #Temp>
+    <h2>Начните поиск!</h2>
+  </ng-template>
+  <ng-container *ngIf="imageFinder.length !== 0; else Temp">
+    <!--===========================Вывод кол-ва найденных изображений-->
+    <h4>Найдено изображений {{ imageFinder.length }}</h4>
+    <div class="paginator">
+      <!-- ============================Paginator              -->
+      <pagination-controls
+        (click)="scroll.scrollTop = 0"
+        (pageChange)="pagination($event)"
+        nextLabel="Следующая"
+        previousLabel="Предыдущая"
+      ></pagination-controls>
+    </div>
+    <div class="block-image-cards" #scroll>
+      <!-- ================================ Cards-->
+      <div
+        class="image-cards"
+        *ngFor="
+          let item of imageFinder
+            | paginate : { itemsPerPage: 24, currentPage: page }
+        "
+      >
+        <h5 class="title">
+          {{ item.title }}
+        </h5>
+        <div class="images">
+          <img
+            src="{{ item.url_c }}"
+            alt=""
+            (click)="showPicture(item.url_c, imageFinder)"
+          />
+        </div>
+        <div class="btn-block">
+          <button
+            [disabled]="item.flag === true"
+            mat-raised-button
+            [style.backgroundColor]="item.flag ? 'cadetblue' : ''"
+            (click)="savedImage(item)"
+          >
+            {{ item.flag ? "Сохранено" : "Сохранить" }}
+            <span class="material-symbols-outlined"> bookmarks </span>
+          </button>
+        </div>
+      </div>
+      <!-- ======================= -->
+    </div>
+  </ng-container>
+</div>

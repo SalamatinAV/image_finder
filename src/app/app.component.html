@@ -1,0 +1,40 @@
+<div class="main-block">
+  <header class="header">
+    <span class="title"
+      >ImageFinder
+      <img
+        style="height: 40px; width: 40px"
+        src="../assets/img/лупа.png"
+        alt=""
+      />
+    </span>
+    <!-- ============================================================= -->
+    <div class="block-link">
+      <a
+        href="imageSearch"
+        matTooltip="Поиск"
+        class="material-symbols-outlined"
+        routerLink="imageSearch"
+        routerLinkActive="active-link"
+      >
+        search
+      </a>
+      <a
+        href="savedPictures"
+        matTooltip="Избранное"
+        class="material-symbols-outlined"
+        routerLink="savedPictures"
+        routerLinkActive="active-link"
+      >
+        collections_bookmark
+      </a>
+    </div>
+  </header>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-show-picture
+  (click)="removePicture($event)"
+  *ngIf="showPictureFlag"
+></app-show-picture>

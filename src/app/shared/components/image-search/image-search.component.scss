@@ -1,0 +1,211 @@
+.main-unit {
+  .searsh-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .example-form-field {
+      width: 80%;
+      margin-top: 10px;
+    }
+  }
+  h2 {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+  }
+  h4 {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .block-image-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+    padding-bottom: 165px;
+    .image-cards {
+      margin: 10px;
+      padding: 8px;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgb(206, 204, 200);
+      border-radius: 10px;
+      transition: 0.5s;
+
+      h5.title {
+        margin-bottom: 15px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: white;
+      }
+      .images {
+        width: 100%;
+        height: 160px;
+        img {
+          cursor: pointer;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .btn-block {
+        margin-top: 10px;
+        span {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .image-cards:hover {
+    background-color: rgba(255, 255, 255, 0.144);
+    transition: 0.5s;
+  }
+}
+
+:host ::ng-deep {
+  //===================================================================================================================
+  //                                                        INPUT
+  //===================================================================================================================
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+  //                                                    cancel icon color
+  .cancel.material-symbols-outlined {
+    color: white;
+  }
+  // =========================================================================================
+  //                                                    color caret
+  .mdc-text-field .mdc-text-field__input {
+    caret-color: rgb(65, 223, 33);
+  }
+  // ==========================================================================================
+  .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: white;
+  }
+  // ==========================================================================================
+  //                                                   label color
+  .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgb(195, 196, 196);
+  }
+  //                                                label color on focus
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+    .mdc-notched-outline--upgraded
+    .mdc-floating-label--float-above {
+    color: rgb(4, 197, 231);
+  }
+  // ==========================================================================================
+  //                                                  input border color
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+    .mdc-notched-outline__leading,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+    .mdc-notched-outline__notch,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+    .mdc-notched-outline__trailing {
+    border-color: rgb(4, 197, 231);
+  }
+  // ==========================================================================================
+  //                                              input border color on hover
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+      .mdc-text-field--focused
+    ):hover
+    .mdc-notched-outline
+    .mdc-notched-outline__leading,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+      .mdc-text-field--focused
+    ):hover
+    .mdc-notched-outline
+    .mdc-notched-outline__notch,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+      .mdc-text-field--focused
+    ):hover
+    .mdc-notched-outline
+    .mdc-notched-outline__trailing {
+    border-color: rgb(147, 233, 248);
+  }
+  // ==========================================================================================
+  //                                               input border color on focus
+  .mdc-text-field--outlined:not(
+      .mdc-text-field--disabled
+    ).mdc-text-field--focused
+    .mdc-notched-outline__leading,
+  .mdc-text-field--outlined:not(
+      .mdc-text-field--disabled
+    ).mdc-text-field--focused
+    .mdc-notched-outline__notch,
+  .mdc-text-field--outlined:not(
+      .mdc-text-field--disabled
+    ).mdc-text-field--focused
+    .mdc-notched-outline__trailing {
+    border-color: rgb(4, 197, 231);
+    border-width: 2px;
+  }
+
+  //===================================================================================================================
+  //                                                        BUTTON
+  //===================================================================================================================
+  .mdc-button__label {
+    display: flex;
+    padding: 0 4px;
+  }
+  .mat-mdc-raised-button.mat-mdc-button-base {
+    padding: 0 0 0 4px;
+    height: 28px;
+    transition: 0.3s;
+  }
+  .mat-mdc-raised-button.mat-mdc-button-base:hover {
+    background-color: rgb(234 235 230 / 84%);
+  }
+  //===================================================================================================================
+  //                                                        ICON
+  //===================================================================================================================
+  .material-symbols-outlined {
+    color: #0000008e;
+  }
+
+  //===================================================================================================================
+  //                                                        SPINER
+  //===================================================================================================================
+
+  .mdc-linear-progress__bar-inner {
+    border-color: rgb(0, 255, 0);
+    margin: 1px;
+  }
+  .mat-mdc-progress-bar .mdc-linear-progress__buffer-bar {
+    background-color: rgba(1, 38, 49, 0.884);
+  }
+  //===================================================================================================================
+  //                                                     PAGINATION-CONTROLS
+  //===================================================================================================================
+  // .ngx-pagination a {
+  // }
+  .ngx-pagination a {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+  }
+  .pagination-previous a,
+  .pagination-next a {
+    color: #02f2fa;
+    transition: 0.7s;
+  }
+  .ngx-pagination a:hover,
+  .ngx-pagination button:hover {
+    background: #0a0a0a54;
+    border-radius: 8px;
+  }
+  .ngx-pagination .current {
+    border-radius: 5px;
+    background: #02f2fa;
+    color: #000000;
+  }
+  .ngx-pagination .disabled {
+    color: #101010;
+  }
+}
