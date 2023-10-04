@@ -23,9 +23,9 @@ export class ImageFinderService {
 
   savedImage(item: Photo) {
     const local: any = localStorage.getItem('SaveIMG');
-    if (local != null) {
-      this.savedImages = JSON.parse(local);
-    }
+    // if (local !== null) {
+    this.savedImages = JSON.parse(local);
+    // }
     if (!this.savedImages.includes(item)) {
       this.savedImages.unshift(item);
       localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
