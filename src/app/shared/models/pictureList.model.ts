@@ -24,5 +24,5 @@ export interface Photo {
   url_c: string;
   height_z: number;
   width_z: number;
-  flag: boolean;
+  flag?: boolean;
 }

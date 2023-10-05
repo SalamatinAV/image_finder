@@ -62,11 +62,13 @@ export class ImageSearchComponent implements OnInit {
           photo.flag = false;
           const getItem: any = localStorage.getItem('SaveIMG');
           this.imageFinderService.savedImages = JSON.parse(getItem);
+          // if (this.imageFinderService.savedImages !== null) {
           this.imageFinderService.savedImages.forEach((saved) => {
             if (saved.url_c === photo.url_c) {
               photo.flag = true;
             }
           });
+          // }
         });
       });
 

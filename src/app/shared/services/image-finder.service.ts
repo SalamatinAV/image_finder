@@ -26,9 +26,9 @@ export class ImageFinderService {
     if (local !== null) {
       this.savedImages = JSON.parse(local);
     }
-    if (!this.savedImages.includes(item)) {
-      this.savedImages.unshift(item);
-      localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
-    }
+    // if (this.savedImages !== null && this.savedImages.includes(item)) {
+    this.savedImages.unshift(item);
+    localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
+    // }
   }
 }
