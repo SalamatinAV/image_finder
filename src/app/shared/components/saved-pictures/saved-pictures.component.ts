@@ -18,12 +18,12 @@ export class SavedPicturesComponent implements OnInit {
 
   ngOnInit(): void {
     this.savedImages = this.imageFinderService.savedImages;
-    const getItem: any = localStorage.getItem('SaveIMG');
-    this.savedImages = JSON.parse(getItem);
+    // const getItem: any = localStorage.getItem('SaveIMG');
+    // this.savedImages = JSON.parse(getItem);
   }
   public deleteImage(idx: number) {
     this.savedImages.splice(idx, 1);
-    localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
+    // localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
   }
 
   showPicture(url: string, arr: Photo[]) {
