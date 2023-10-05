@@ -35,9 +35,9 @@ export class ImageFinderService implements OnInit {
     // if (local !== null) {
     // this.savedImages = JSON.parse(local);
     // }
-    if (this.savedImages.includes(item)) {
-      this.savedImages.unshift(item);
-      localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
-    }
+    // if (this.savedImages.includes(item)) {
+    this.savedImages.unshift(item);
+    localStorage.setItem('SaveIMG', JSON.stringify(this.savedImages));
+    // }
   }
 }
